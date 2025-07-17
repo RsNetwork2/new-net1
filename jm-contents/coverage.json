@@ -1,0 +1,137 @@
+[
+  {
+    "value": "Shaheb_Bazar",
+    "name": { "en": "Shaheb Bazar", "bn": "সাহেব বাজার" },
+    "status": "available"
+  },
+  {
+    "value": "Alupotti",
+    "name": { "en": "Alupotti", "bn": "আলুপট্টি" },
+    "status": "available"
+  },
+  {
+    "value": "Uposhohor",
+    "name": { "en": "Uposhohor", "bn": "উপশহর" },
+    "status": "available"
+  },
+  {
+    "value": "Motihar",
+    "name": { "en": "Motihar", "bn": "মতিহার" },
+    "status": "available"
+  },
+  {
+    "value": "Kazla",
+    "name": { "en": "Kazla", "bn": "কাজলা" },
+    "status": "available"
+  },
+  {
+    "value": "Talaimari",
+    "name": { "en": "Talaimari", "bn": "তালাইমারী" },
+    "status": "available"
+  },
+  {
+    "value": "Boalia",
+    "name": { "en": "Boalia", "bn": "বোয়ালিয়া" },
+    "status": "available"
+  },
+  {
+    "value": "Laxmipur",
+    "name": { "en": "Laxmipur", "bn": "লক্ষ্মীপুর" },
+    "status": "available"
+  },
+  {
+    "value": "Sapura",
+    "name": { "en": "Sapura", "bn": "সপুরা" },
+    "status": "available"
+  },
+  {
+    "value": "Bornali",
+    "name": { "en": "Bornali", "bn": "বর্ণালী" },
+    "status": "available"
+  },
+  {
+    "value": "Padma_RA",
+    "name": { "en": "Padma R/A", "bn": "পদ্মা আবাসিক এলাকা" },
+    "status": "available"
+  },
+  {
+    "value": "Hetem_Khan",
+    "name": { "en": "Hetem Khan", "bn": "হেতেম খাঁ" },
+    "status": "available"
+  },
+  {
+    "value": "Shiroil",
+    "name": { "en": "Shiroil", "bn": "শিরোইল" },
+    "status": "available"
+  },
+  {
+    "value": "Sopura",
+    "name": { "en": "Sopura", "bn": "সপুরা" },
+    "status": "available"
+  },
+  {
+    "value": "Medical_College",
+    "name": { "en": "Medical College", "bn": "মেডিকেল কলেজ" },
+    "status": "available"
+  },
+  {
+    "value": "Rajshahi_University",
+    "name": { "en": "Rajshahi University", "bn": "রাজশাহী বিশ্ববিদ্যালয়" },
+    "status": "available"
+  },
+  {
+    "value": "RUET",
+    "name": { "en": "RUET", "bn": "রুয়েট" },
+    "status": "available"
+  },
+  {
+    "value": "New_Market",
+    "name": { "en": "New Market", "bn": "নিউ মার্কেট" },
+    "status": "available"
+  },
+  {
+    "value": "Paba",
+    "name": { "en": "Paba", "bn": "পবা" },
+    "status": "available"
+  },
+  {
+    "value": "Noudapara",
+    "name": { "en": "Noudapara", "bn": "নওদাপাড়া" },
+    "status": "available"
+  },
+  {
+    "value": "Kashiadanga",
+    "name": { "en": "Kashiadanga", "bn": "কাশিয়াডাঙ্গা" },
+    "status": "coming_soon"
+  },
+  {
+    "value": "Katakhali",
+    "name": { "en": "Katakhali", "bn": "কাটাখালী" },
+    "status": "available"
+  },
+  {
+    "value": "Binodpur",
+    "name": { "en": "Binodpur", "bn": "বিনোদপুর" },
+    "status": "available"
+  },
+  {
+    "value": "Chapainawabganj",
+    "name": { "en": "Chapainawabganj", "bn": "চাঁপাইনবাবগঞ্জ" },
+    "status": "unavailable"
+  },
+  {
+    "value": "Natore",
+    "name": { "en": "Natore", "bn": "নাটোর" },
+    "status": "unavailable"
+  },
+  {
+    "value": "Naogaon",
+    "name": { "en": "Naogaon", "bn": "নওগাঁ" },
+    "status": "unavailable"
+  },
+  {
+    "value": "Pabna",
+    "name": { "en": "Pabna", "bn": "পাবনা" },
+    "status": "unavailable"
+  }
+]

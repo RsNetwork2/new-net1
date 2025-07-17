@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sinthia Telecom</title>
+
+    <meta name="description" content="Sinthia Telecom offers premium, high-speed fiber internet for homes and businesses in Rajshahi, featuring an interactive coverage checker, speed test, and quick pay.">
+    <meta name="keywords" content="Premium ISP, Fiber Internet Rajshahi, Sinthia Telecom, IPv6, BDIX, Corporate Internet, Quick Pay, Light/Dark Mode">
+    <meta name="author" content="Sinthia Telecom">
+
+    <meta property="og:title" content="Sinthia Telecom - Premium Internet Solutions">
+    <meta property="og:description" content="Experience the future of connectivity with a stunning new UI, advanced features, and unparalleled support.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.sinthiaisp.net">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1518432835214-3d387495e9b8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+    <meta property="og:image:alt" content="Vibrant abstract network lines">
+
+    <!-- External Libraries -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+
+    <!-- Core Website Styles -->
+    <link rel="stylesheet" href="./jm-styles/core-styles.css" type="text/css">
+
+    <!-- FIX: Theme loading glitch (FOUC) -->
+    <script>
+        (function() {
+            try {
+                const theme = localStorage.getItem('theme') || 'light';
+                if (theme === 'light') {
+                    document.documentElement.classList.add('light-mode');
+                }
+            } catch (e) {
+                console.error("Failed to apply initial theme:", e);
+            }
+        })();
+    </script>
+</head>
+
+<body class="bg-primary text-secondary">
+
+    <header id="main-header" class="h-16">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-full">
+            <a href="#" class="text-2xl font-bold gradient-text" data-key="brand_name">Sinthia Telecom</a>
+
+            <div id="main-nav" class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="#about" class="nav-link text-secondary hover:text-primary transition-colors" data-key="nav_about">About</a>
+                <a href="#services" class="nav-link text-secondary hover:text-primary transition-colors" data-key="nav_services">Services</a>
+                <a href="#packages" class="nav-link text-secondary hover:text-primary transition-colors" data-key="nav_packages">Packages</a>
+                <a href="#coverage" class="nav-link text-secondary hover:text-primary transition-colors" data-key="nav_coverage">Coverage</a>
+                <a href="#contact" class="nav-link text-secondary hover:text-primary transition-colors" data-key="nav_contact">Contact</a>
+            </div>
+
+            <div class="flex items-center space-x-2">
+                <div class="hidden md:flex items-center space-x-2">
+                    <button id="quick-pay-btn" class="btn-primary py-2 px-5 text-sm" data-key="nav_quick_pay">Quick Pay</button>
+                    <a data-contact-key="userPortal" href="#" class="p-2 rounded-full hover:bg-white/10" aria-label="User Portal" target="_blank" rel="noopener noreferrer"><i class="fas fa-user text-lg text-secondary"></i></a>
+                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-white/10" aria-label="Toggle Theme">
+                        <i id="theme-icon" class="fa-solid fa-moon text-lg text-secondary"></i>
+                    </button>
+                </div>
+
+                <div class="flex items-center space-x-1">
+                    <button id="header-theme-toggle-mobile" class="md:hidden p-2 rounded-full hover:bg-white/10" aria-label="Toggle Theme">
+                        <i id="header-theme-icon-mobile" class="fa-solid fa-moon text-xl text-primary"></i>
+                    </button>
+                    <button id="lang-toggle" class="text-sm font-semibold p-2 rounded-md hover:bg-white/10 text-secondary" aria-label="Toggle Language" data-key="lang_toggle_button_text">বাং</button>
+                    <button id="mobile-menu-button" class="md:hidden p-2 rounded-md hover:bg-white/10">
+                         <i class="fas fa-bars text-xl text-primary"></i>
+                     </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div id="mobile-menu" class="hidden fixed top-0 left-0 w-full h-full z-40">
+        <div class="absolute inset-0 bg-primary/80 backdrop-blur-lg"></div>
+        <div class="relative container mx-auto flex flex-col p-6 pt-20 h-full overflow-y-auto">
+            <a href="#about" class="mobile-menu-link"> <i class="fas fa-info-circle w-6 text-center text-secondary"></i> <span data-key="nav_about">About</span></a>
+            <a href="#services" class="mobile-menu-link"> <i class="fas fa-cogs w-6 text-center text-secondary"></i> <span data-key="nav_services">Services</span></a>
+            <a href="#packages" class="mobile-menu-link"> <i class="fas fa-box-open w-6 text-center text-secondary"></i> <span data-key="nav_packages">Packages</span></a>
+            <a href="#coverage" class="mobile-menu-link"> <i class="fas fa-map-marked-alt w-6 text-center text-secondary"></i> <span data-key="nav_coverage">Coverage</span></a>
+            <a href="#testimonials" class="mobile-menu-link"> <i class="fas fa-star w-6 text-center text-secondary"></i> <span data-key="nav_testimonials">Testimonials</span></a>
+            <a href="#contact" class="mobile-menu-link"> <i class="fas fa-envelope w-6 text-center text-secondary"></i> <span data-key="nav_contact">Contact</span></a>
+
+            <div class="mt-auto pt-6">
+                <div class="grid grid-cols-2 gap-4">
+                    <a data-contact-key="userPortal" href="#" class="mobile-priority-btn" target="_blank" rel="noopener noreferrer">
+                        <i class="fas fa-user-circle text-xl"></i>
+                        <span data-key="footer_link_selfcare">User Portal</span>
+                    </a>
+                    <button id="mobile-quick-pay-btn" class="mobile-priority-btn">
+                        <i class="fas fa-credit-card text-xl"></i>
+                        <span data-key="nav_quick_pay">Quick Pay</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="relative z-10 overflow-x-hidden">
+        <section id="hero" class="relative py-28 md:py-40 overflow-hidden">
+            <div id="hero-bg"></div>
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <div class="max-w-4xl mx-auto reveal-on-scroll">
+                    <h1 class="text-4xl md:text-7xl font-black text-primary leading-tight mb-6" data-key="hero_heading">Connecting Your World, <br> at the <span class="gradient-text">Speed of Light.</span></h1>
+                    <p class="text-lg md:text-xl max-w-2xl mx-auto mb-10 text-secondary" data-key="hero_subheading">Experience Rajshahi's most reliable fiber optic network, engineered for ultimate performance and seamless connectivity.</p>
+                    <a href="#packages" class="btn-primary py-4 px-10 text-lg" data-key="hero_cta_primary">View Plans</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-20 md:py-32">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <div class="reveal-on-scroll">
+                    <h2 class="text-3xl md:text-5xl font-bold text-primary mb-6" data-key="about_heading">Engineered for Excellence.</h2>
+                    <p class="mb-8 text-lg" data-key="about_subheading">Sinthia Telecom isn't just an ISP; we're architects of digital experiences. We're committed to providing cutting-edge internet services with a focus on reliability and unmatched customer support.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center mt-12">
+                        <div class="content-card p-6">
+                            <p class="text-4xl md:text-5xl font-bold gradient-text"><span class="stat-number" data-target="10">0</span>K+</p>
+                            <p class="text-sm mt-2 text-secondary" data-key="stats_customers">Happy Clients</p>
+                        </div>
+                        <div class="content-card p-6">
+                            <p class="text-4xl md:text-5xl font-bold gradient-text"><span class="stat-number" data-target="99.9">0</span>%</p>
+                            <p class="text-sm mt-2 text-secondary" data-key="stats_uptime">Network Uptime</p>
+                        </div>
+                        <div class="content-card p-6">
+                            <p class="text-4xl md:text-5xl font-bold gradient-text"><span id="support-rating-stat" class="stat-number" data-target="4.8">0</span>/5</p>
+                            <p class="text-sm mt-2 text-secondary" data-key="stats_rating">Support Rating</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="reveal-on-scroll svg-container" style="--delay: 0.1s; perspective: 1000px;">
+                    <!-- FINAL V2 :: Excellence SVG Animation -->
+                    <svg id="excellence-svg" viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <g id="server-bay">
+                                <rect class="server-bay-body" x="-35" y="-10" width="70" height="20" rx="2" />
+                                <path class="server-bay-vents" d="M -25 -5 H 15 M -25 0 H 15 M -25 5 H 15" />
+                                <circle class="led led-green" cx="25" cy="-6" r="1.2" />
+                                <circle class="led led-blue" cx="25" cy="0" r="1.2" />
+                                <circle class="led led-orange" cx="25" cy="6" r="1.2" />
+                            </g>
+                        </defs>
+
+                        <!-- Data Flow Lines -->
+                        <g class="data-flow-lines">
+                            <!-- To Server 1 -->
+                            <path class="line-in"  d="M 20 20 L 100 50" />
+                            <path class="line-out" d="M 180 20 L 100 50" />
+                            <!-- To Server 2 -->
+                            <path class="line-in"  d="M 20 75 L 100 75" />
+                            <path class="line-out" d="M 180 75 L 100 75" />
+                            <!-- To Server 3 -->
+                            <path class="line-in"  d="M 20 130 L 100 100" />
+                            <path class="line-out" d="M 180 130 L 100 100" />
+                        </g>
+
+                        <!-- Server Bays -->
+                        <g class="server-stack">
+                            <use href="#server-bay" x="100" y="50" />
+                            <use href="#server-bay" x="100" y="75" />
+                            <use href="#server-bay" x="100" y="100" />
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="py-20 md:py-32 bg-secondary">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16 reveal-on-scroll">
+                    <h2 class="text-3xl md:text-5xl font-bold text-primary mb-4" data-key="services_heading">Our Service Portfolio</h2>
+                    <p class="text-lg" data-key="services_subheading">A complete suite of solutions designed to empower your digital life, from home entertainment to enterprise operations.</p>
+                </div>
+                <div id="services-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Services loaded by JS -->
+                </div>
+            </div>
+        </section>
+
+        <section id="packages" class="py-20 md:py-32">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16 reveal-on-scroll">
+                    <h2 class="text-3xl md:text-5xl font-bold text-primary mb-4" data-key="packages_heading">Find Your Perfect Plan</h2>
+                    <p class="text-lg" data-key="packages_subheading">Transparent pricing for every need and budget. No hidden fees, just pure speed.</p>
+                </div>
+                <div id="packages-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Packages loaded by JS -->
+                </div>
+
+                <div class="text-center mt-24 reveal-on-scroll">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4" data-key="special_packages_heading">Ek Desh Ek Rate</h2>
+                    <p class="max-w-2xl mx-auto mb-12" data-key="special_packages_subheading">Government-regulated packages ensuring fair pricing for everyone across the nation.</p>
+                    <div id="special-packages-container" class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                        <!-- Special packages loaded by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="speed-test" class="py-20 md:py-32 bg-secondary">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="max-w-3xl mx-auto reveal-on-scroll">
+                    <h2 class="text-3xl md:text-5xl font-bold text-primary mb-4" data-key="speedtest_heading">Test Your Connection Speed</h2>
+                    <p class="mb-12" data-key="speedtest_subheading">Click below to run a simulated test of your current internet speed.</p>
+                    <div class="content-card textured-card rounded-xl p-6 sm:p-8 flex flex-col items-center">
+                        <div class="relative w-[250px] h-[125px]">
+                            <svg id="speed-gauge-svg" class="w-full h-full" viewBox="0 0 100 50">
+                                <defs>
+                                    <linearGradient id="downloadGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="var(--accent-blue)" />
+                                        <stop offset="100%" stop-color="var(--accent-purple)" />
+                                    </linearGradient>
+                                    <linearGradient id="uploadGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="var(--accent-pink)" />
+                                        <stop offset="100%" stop-color="var(--accent-green)" />
+                                    </linearGradient>
+                                </defs>
+                                <path class="gauge-bg-circle" d="M 10 50 A 40 40 0 0 1 90 50" fill="none" stroke-width="10" />
+                                <path id="gauge-fg-circle" class="gauge-fg-circle" d="M 10 50 A 40 40 0 0 1 90 50" fill="none" stroke-width="10" stroke="url(#downloadGradient)" />
+                            </svg>
+                            <div class="absolute inset-0 flex flex-col items-center justify-end">
+                                <span id="speed-value" class="text-4xl font-bold text-primary">0.00</span>
+                                <span class="text-sm text-secondary mb-2">Mbps</span>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-3 gap-4 w-full max-w-md my-6 mx-auto text-center">
+                            <div class="p-2 rounded-lg highlight-result-box">
+                                <p class="text-sm text-secondary" data-key="speedtest_ping">Ping</p>
+                                <p id="ping-value" class="text-xl font-semibold text-primary">- ms</p>
+                            </div>
+                            <div class="p-2 rounded-lg highlight-result-box">
+                                <p class="text-sm text-secondary" data-key="speedtest_download">Download</p>
+                                <p id="download-value" class="text-xl font-semibold text-primary">- Mbps</p>
+                            </div>
+                            <div class="p-2 rounded-lg highlight-result-box">
+                                <p class="text-sm text-secondary" data-key="speedtest_upload">Upload</p>
+                                <p id="upload-value" class="text-xl font-semibold text-primary">- Mbps</p>
+                            </div>
+                        </div>
+                        <button id="start-speed-test-btn" class="btn-primary py-3 px-10 text-lg font-semibold">
+                            <span data-key="speedtest_start_btn">Begin Test</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="coverage" class="py-20 md:py-32">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                    <div class="reveal-on-scroll">
+                        <h2 class="text-3xl md:text-5xl font-bold text-primary mb-4" data-key="coverage_heading">Are We In Your Area?</h2>
+                        <p class="mb-8 text-lg" data-key="coverage_subheading">We are rapidly expanding our network across Rajshahi. Use our interactive tool to check for service availability at your location.</p>
+                        <div class="content-card p-8 flex flex-col justify-center min-h-[180px]">
+                            <div id="coverage-form-wrapper" class="transition-transform duration-500 ease-in-out">
+                                <div class="flex flex-col sm:flex-row gap-4">
+                                    <select id="coverage-area-select" class="w-full bg-primary border border-color rounded-lg p-3 text-primary focus:outline-none focus:ring-2 focus:ring-accent-blue">
+                                        <!-- Options loaded by JS -->
+                                    </select>
+                                    <button id="check-coverage-btn" class="btn-primary px-8 py-3 w-full sm:w-auto flex-shrink-0" data-key="coverage_check_btn">Check</button>
+                                </div>
+                            </div>
+                            <div id="coverage-result" class="text-center font-bold text-lg opacity-0 transition-opacity duration-500 ease-in-out h-0"></div>
+                        </div>
+                    </div>
+                    <div class="reveal-on-scroll svg-container h-full min-h-[300px] md:min-h-[400px]" style="--delay: 0.1s;">
+                        <svg id="coverage-map-svg" viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+                            <g class="map-nodes">
+                                <circle class="map-node" cx="100" cy="20" r="4"/>
+                                <circle class="map-node" cx="170" cy="60" r="4"/>
+                                <circle class="map-node" cx="140" cy="130" r="4"/>
+                                <circle class="map-node" cx="60" cy="130" r="4"/>
+                                <circle class="map-node" cx="30" cy="60" r="4"/>
+                            </g>
+                            <g class="map-lines">
+                                <path d="M100 20 L 170 60"/>
+                                <path d="M170 60 L 140 130"/>
+                                <path d="M140 130 L 60 130"/>
+                                <path d="M60 130 L 30 60"/>
+                                <path d="M30 60 L 100 20"/>
+                                <path d="M100 20 L 140 130"/>
+                                <path d="M170 60 L 60 130"/>
+                                <path d="M140 130 L 30 60"/>
+                            </g>
+                            <g class="map-pulses">
+                                <circle class="map-pulse" cx="100" cy="20" r="4"/>
+                                <circle class="map-pulse" cx="170" cy="60" r="4" style="animation-delay: -0.5s;"/>
+                                <circle class="map-pulse" cx="140" cy="130" r="4" style="animation-delay: -1.0s;"/>
+                                <circle class="map-pulse" cx="60" cy="130" r="4" style="animation-delay: -1.5s;"/>
+                                <circle class="map-pulse" cx="30" cy="60" r="4" style="animation-delay: -2.0s;"/>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="py-20 md:py-32 bg-secondary">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16 reveal-on-scroll">
+                    <h2 class="text-3xl md:text-5xl font-bold text-primary mb-4" data-key="testimonials_heading">What Our Customers Say</h2>
+                    <p class="text-lg" data-key="testimonials_subheading">Real stories from satisfied users who trust Sinthia Telecom for their daily connection.</p>
+                </div>
+                <div id="testimonial-slider-container" class="relative max-w-2xl mx-auto md:max-w-4xl">
+                    <div id="testimonial-slider-wrapper" class="relative">
+                        <div id="testimonial-slider" class="cursor-grab">
+                            <!-- Testimonials loaded by JS -->
+                        </div>
+                    </div>
+                    <div class="absolute top-1/2 -translate-y-1/2 -left-4 z-20 hidden md:block">
+                        <button id="testimonial-prev-btn" class="slider-btn prev text-primary"><i class="fas fa-chevron-left"></i></button>
+                    </div>
+                    <div class="absolute top-1/2 -translate-y-1/2 -right-4 z-20 hidden md:block">
+                        <button id="testimonial-next-btn" class="slider-btn next text-primary"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-20 md:py-32">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16 reveal-on-scroll">
+                    <h2 class="text-3xl md:text-5xl font-bold text-primary mb-4" data-key="contact_form_title">Write to Us</h2>
+                    <p class="text-lg" data-key="contact_desc">Have a question or a proposal? We'd love to hear from you. Fill out the form below and we'll get back to you shortly.</p>
+                </div>
+                <div class="max-w-2xl mx-auto">
+                    <form id="contact-form" class="content-card p-8 space-y-6" novalidate>
+                        <input type="hidden" name="form_type" value="contact">
+                        <input type="text" name="website_url" class="honeypot" tabindex="-1" autocomplete="off">
+
+                        <div>
+                            <label for="contact-name" class="text-sm font-medium text-secondary" data-key="contact_name_label">Your Name</label>
+                            <input type="text" id="contact-name" name="name" required class="w-full mt-1 p-3 rounded-md bg-primary border border-color text-primary focus:outline-none focus:ring-2 focus:ring-accent-blue" placeholder="Your Full Name" data-key="contact_name_placeholder">
+                        </div>
+                        <div>
+                            <label for="contact-email" class="text-sm font-medium text-secondary" data-key="contact_email_label">Your Email</label>
+                            <input type="email" id="contact-email" name="email" required class="w-full mt-1 p-3 rounded-md bg-primary border border-color text-primary focus:outline-none focus:ring-2 focus:ring-accent-blue" placeholder="example@email.com" data-key="contact_email_placeholder">
+                        </div>
+                        <div>
+                            <label for="contact-message" class="text-sm font-medium text-secondary" data-key="contact_message_label">Your Message</label>
+                            <textarea id="contact-message" name="message" required rows="5" class="w-full mt-1 p-3 rounded-md bg-primary border border-color text-primary focus:outline-none focus:ring-2 focus:ring-accent-blue" placeholder="Write your message here..." data-key="contact_message_placeholder"></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary w-full py-3" data-key="contact_button">Send Message</button>
+                        <div id="contact-status" class="status-message-area text-center text-sm pt-2 min-h-[1.25rem]"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="support" class="pt-0 pb-20 md:pb-32">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center reveal-on-scroll">
+                <h2 class="text-3xl md:text-5xl font-bold text-primary mb-4" data-key="support_title">Always Here To Help</h2>
+                <p class="max-w-3xl mx-auto mb-12 text-lg" data-key="support_desc">Our connection comes with a commitment. Get expert help from our dedicated support team, available 24/7.</p>
+                <div class="content-card max-w-4xl mx-auto p-8 lg:p-12">
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <a data-contact-key="hotline" href="#" class="support-contact-item group">
+                            <div class="icon-wrapper bg-blue-500/10"><i class="fas fa-phone-alt text-3xl text-blue-400"></i></div>
+                            <h3 class="font-semibold text-primary mb-1 text-lg" data-key="support_hotline_title">24/7 Hotline</h3>
+                            <p data-contact-key="hotlineNumber" class="text-secondary"></p>
+                        </a>
+                        <a data-contact-key="whatsapp" href="#" target="_blank" rel="noopener noreferrer" class="support-contact-item group">
+                            <div class="icon-wrapper bg-green-500/10"><i class="fab fa-whatsapp text-3xl text-green-400"></i></div>
+                            <h3 class="font-semibold text-primary mb-1 text-lg" data-key="support_whatsapp_title">WhatsApp Chat</h3>
+                            <p class="text-secondary" data-key="support_whatsapp_action">Start a Conversation</p>
+                        </a>
+                        <a data-contact-key="email" href="#" class="support-contact-item group">
+                            <div class="icon-wrapper bg-purple-500/10"><i class="fas fa-envelope-open-text text-3xl text-purple-400"></i></div>
+                            <h3 class="font-semibold text-primary mb-1 text-lg" data-key="support_email_title">Email Support</h3>
+                            <p data-contact-key="emailAddress" class="text-secondary"></p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-16 bg-primary border-t border-color">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+                <div class="col-span-2 lg:col-span-2">
+                    <h3 class="text-xl font-bold gradient-text mb-4" data-key="brand_name">Sinthia Telecom</h3>
+                    <p class="text-sm mb-4 text-secondary" data-key="footer_about">Delivering Rajshahi's premier high-speed internet experience with unmatched reliability and dedicated customer support.</p>
+                    <div class="flex space-x-4">
+                        <a data-contact-key="facebook" href="#" target="_blank" rel="noopener noreferrer" class="text-secondary hover:text-blue-500 transition-colors"><i class="fab fa-facebook-f text-xl"></i></a>
+                        <a data-contact-key="whatsapp" href="#" target="_blank" rel="noopener noreferrer" class="text-secondary hover:text-green-500 transition-colors"><i class="fab fa-whatsapp text-xl"></i></a>
+                        <a data-contact-key="email" href="#" class="text-secondary hover:text-purple-500 transition-colors"><i class="fas fa-envelope text-xl"></i></a>
+                    </div>
+                </div>
+                <div class="col-span-1">
+                    <h4 class="font-semibold text-primary mb-4" data-key="footer_company_heading">Company</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#about" class="text-secondary hover:text-primary" data-key="footer_link_about">About Us</a></li>
+                        <li><button type="button" data-policy="terms" class="policy-btn text-secondary hover:text-primary" data-key="footer_link_terms">Terms of Use</button></li>
+                        <li><button type="button" data-policy="privacy" class="policy-btn text-secondary hover:text-primary" data-key="footer_link_privacy">Privacy Policy</button></li>
+                        <li><button type="button" data-policy="refund" class="policy-btn text-secondary hover:text-primary" data-key="footer_link_return">Return Policy</button></li>
+                        <li><button type="button" data-policy="usage" class="policy-btn text-secondary hover:text-primary" data-key="footer_link_usage">Usage Policy</button></li>
+                    </ul>
+                </div>
+                <div class="col-span-1">
+                    <h4 class="font-semibold text-primary mb-4" data-key="footer_services_heading">Services</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#services" class="text-secondary hover:text-primary" data-key="footer_link_services">All Services</a></li>
+                        <li><a href="#packages" class="text-secondary hover:text-primary" data-key="footer_link_packages">Internet Packages</a></li>
+                        <li><a href="#coverage" class="text-secondary hover:text-primary" data-key="footer_link_coverage">Coverage Check</a></li>
+                    </ul>
+                </div>
+                <div class="col-span-1">
+                    <h4 class="font-semibold text-primary mb-4" data-key="footer_quicklinks_heading">Quick Links</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><button type="button" id="footer-quick-pay" class="text-secondary hover:text-primary" data-key="footer_link_paybill">Quick Pay</button></li>
+                        <li><a data-contact-key="userPortal" href="#" class="text-secondary hover:text-primary" data-key="footer_link_selfcare" target="_blank" rel="noopener noreferrer">User Portal</a></li>
+                        <li><a data-contact-key="btrcTariff" href="#" target="_blank" class="text-secondary hover:text-primary" data-key="footer_link_btrc">BTRC Tariff</a></li>
+                    </ul>
+                </div>
+                <div class="col-span-1">
+                    <h4 class="font-semibold text-primary mb-4" data-key="footer_support_heading">Support</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#contact" class="text-secondary hover:text-primary" data-key="footer_link_contact">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-16 pt-8 border-t border-color text-center text-sm">
+                <p class="text-secondary" id="copyright-text" data-key="footer_copyright">© 2025 Sinthia Telecom. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="quick-pay-modal" class="modal-overlay primary">
+        <div class="modal-content p-6 md:p-8">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-xl font-bold text-primary" data-key="modal_title_pay">Quick Bill Pay</h2>
+                <button type="button" class="close-modal-btn p-2 rounded-full hover:bg-white/10"><i class="fas fa-times text-xl text-secondary"></i></button>
+            </div>
+            <div class="space-y-4">
+                <div>
+                    <label for="user-id" class="text-sm font-medium text-secondary" data-key="modal_userid_label">User ID</label>
+                    <input type="text" id="user-id" class="w-full mt-1 p-3 rounded-md bg-primary border border-color text-primary focus:outline-none focus:ring-2 focus:ring-accent-blue" placeholder="Enter your User ID" data-key="modal_userid_placeholder">
+                </div>
+                <button id="modal-checkout-btn" class="btn-primary w-full py-3" data-key="modal_checkout_btn">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="policy-modal" class="modal-overlay secondary">
+        <div class="modal-content p-6 md:p-8">
+            <div class="flex justify-between items-center mb-6">
+                <h2 id="policy-title" class="text-xl font-bold text-primary">Policy Title</h2>
+                <button type="button" class="close-modal-btn p-2 rounded-full hover:bg-white/10"><i class="fas fa-times text-xl text-secondary"></i></button>
+            </div>
+            <div id="policy-content" class="text-secondary text-sm space-y-4 max-h-[60vh] overflow-y-auto pr-2">
+                <!-- Policy content loaded by JS -->
+            </div>
+        </div>
+    </div>
+
+    <div id="subscription-modal" class="modal-overlay primary">
+        <div class="modal-content p-6 md:p-8 max-h-[90vh] overflow-y-auto">
+            <div id="subscription-form-view">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <h2 class="text-xl font-bold text-primary" data-key="modal_subscribe_title">New Connection Request</h2>
+                        <p id="selected-package-text" class="text-sm text-secondary"></p>
+                    </div>
+                    <button type="button" class="close-modal-btn p-2 rounded-full hover:bg-white/10 flex-shrink-0 ml-4"><i class="fas fa-times text-xl text-secondary"></i></button>
+                </div>
+                <form id="subscription-form" novalidate>
+                    <input type="hidden" name="form_type" value="subscription">
+                    <input type="text" name="website_url" class="honeypot" tabindex="-1" autocomplete="off">
+                    <input type="hidden" name="package" id="hidden-package-name">
+                    <div class="space-y-4">
+                        <div>
+                            <label for="full-name" class="text-sm font-medium text-secondary" data-key="modal_subscribe_name">Full Name (as per NID)</label>
+                            <input type="text" id="full-name" name="name" required class="w-full mt-1 p-3 rounded-md bg-primary border border-color text-primary focus:outline-none focus:ring-2 focus:ring-accent-blue" placeholder="Full Name (as per NID)" data-key="modal_subscribe_name_placeholder">
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="nid-number" class="text-sm font-medium text-secondary" data-key="modal_subscribe_nid">NID Number</label>
+                                <input type="text" id="nid-number" name="nid" required class="w-full mt-1 p-3 rounded-md bg-primary border border-color text-primary focus:outline-none focus:ring-2 focus:ring-accent-blue" placeholder="10-17 digit NID number" data-key="modal_subscribe_nid_placeholder">
+                            </div>
+                            <div>
+                                <label for="dob" class="text-sm font-medium text-secondary" data-key="modal_subscribe_dob">Date of Birth</label>
+                                <input type="date" id="dob" name="dob" required class="w-full mt-1 p-3 rounded-md bg-primary border border-color text-primary focus:outline-none focus:ring-2 focus:ring-accent-blue" placeholder="dd/mm/yyyy" data-key="modal_subscribe_dob_placeholder">
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="phone-number" class="text-sm font-medium text-secondary" data-key="modal_subscribe_phone">Mobile Number</label>
+                                <input type="tel" id="phone-number" name="phone" required pattern="01[3-9]\d{8}" title="Please enter a valid 11-digit Bangladeshi mobile number." class="w-full mt-1 p-3 rounded-md bg-primary border border-color text-primary focus:outline-none focus:ring-2 focus:ring-accent-blue"
+                                    placeholder="01xxxxxxxxx" data-key="modal_subscribe_phone_placeholder">
+                            </div>
+                            <div>
+                                <label for="email-address" class="text-sm font-medium text-secondary" data-key="modal_subscribe_email">Email Address (Optional)</label>
+                                <input type="email" id="email-address" name="email" class="w-full mt-1 p-3 rounded-md bg-primary border border-color text-primary focus:outline-none focus:ring-2 focus:ring-accent-blue" placeholder="example@email.com" data-key="modal_subscribe_email_placeholder">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="connection-address" class="text-sm font-medium text-secondary" data-key="modal_subscribe_address">Connection Address</label>
+                            <textarea id="connection-address" name="address" required rows="3" class="w-full mt-1 p-3 rounded-md bg-primary border border-color text-primary focus:outline-none focus:ring-2 focus:ring-accent-blue" placeholder="Holding No, Ward No, Post Office, Police Station, District Name, Zip Code..."
+                                data-key="modal_subscribe_address_placeholder"></textarea>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <input type="checkbox" id="terms-agree" name="terms" required class="mt-1 h-4 w-4 rounded border-gray-500 text-blue-600 focus:ring-blue-500">
+                            <label for="terms-agree" class="text-sm text-secondary">
+                                <span data-key="modal_subscribe_terms_agree">I confirm there is no misinformation and I accept all</span>
+                                <button type="button" data-policy="terms" class="policy-btn text-blue-400 hover:underline" data-key="footer_link_terms">Terms of Use</button>.
+                            </label>
+                        </div>
+                        <div id="subscription-status" class="status-message-area text-center text-sm pt-2 min-h-[1.25rem]"></div>
+                        <button type="submit" id="submit-request-btn" class="btn-primary w-full py-3" data-key="modal_subscribe_button" disabled>Send Request</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="form-success-modal" class="modal-overlay primary">
+        <div class="modal-content p-8 text-center">
+            <div class="w-20 h-20 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-paper-plane text-4xl text-green-400"></i>
+            </div>
+            <h2 class="text-2xl font-bold text-primary mb-2" data-key="form_success_title">Request Sent!</h2>
+            <p class="text-secondary mb-8" data-key="form_success_desc">Thank you. Our team will review your request and contact you within 72 hours to confirm.</p>
+            <button type="button" class="close-modal-btn btn-primary w-full py-3" data-key="modal_close_button">Got It!</button>
+        </div>
+    </div>
+
+    <button id="scroll-to-top" aria-label="Scroll to top">
+        <svg class="absolute" width="50" height="50" viewBox="0 0 50 50">
+            <circle class="progress-ring-track" stroke-width="4" fill="transparent" r="23" cx="25" cy="25"/>
+            <circle class="progress-ring-indicator" stroke-width="4" fill="transparent" r="23" cx="25" cy="25"/>
+        </svg>
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="./jm-scripts/core-scripts.js" type="module"></script>
+</body>
+
+</html>

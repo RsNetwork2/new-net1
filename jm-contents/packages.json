@@ -1,0 +1,17 @@
+{
+  "standard": [
+    { "id": 1, "name": "Starter", "speed": 15, "price": 525, "color": "accent-blue", "features": {"fb": 50, "yt": 50, "bdix": 100, "ftp": 100} },
+    { "id": 2, "name": "Night King", "speed": 25, "price": 630, "color": "accent-pink", "features": {"fb": 50, "yt": 50, "bdix": 100, "ftp": 100} },
+    { "id": 3, "name": "Basic", "speed": 30, "price": 735, "color": "accent-purple", "features": {"fb": 75, "yt": 75, "bdix": 100, "ftp": 100} },
+    { "id": 4, "name": "Standard", "speed": 45, "price": 895, "color": "accent-blue", "features": {"fb": 100, "yt": 100, "bdix": 100, "ftp": 100} },
+    { "id": 5, "name": "Standard Plus", "speed": 60, "price": 1050, "color": "accent-pink", "features": {"fb": 125, "yt": 125, "bdix": 150, "ftp": 150} },
+    { "id": 6, "name": "Pro", "speed": 75, "price": 1260, "color": "accent-purple", "features": {"fb": 150, "yt": 150, "bdix": 150, "ftp": 150} },
+    { "id": 7, "name": "Elite", "speed": 90, "price": 1680, "color": "accent-blue", "features": {"fb": 200, "yt": 200, "bdix": 150, "ftp": 300} },
+    { "id": 8, "name": "Ultra", "speed": 120, "price": 2100, "color": "accent-pink", "features": {"fb": 300, "yt": 300, "bdix": 300, "ftp": 300} }
+  ],
+  "special": [
+    { "id": 1, "name": "Starter", "speed": 5, "price": 400, "color": "accent-blue" },
+    { "id": 2, "name": "Basic", "speed": 10, "price": 700, "color": "accent-pink" },
+    { "id": 3, "name": "Advance", "speed": 20, "price": 1100, "color": "accent-purple" }
+  ]
+}

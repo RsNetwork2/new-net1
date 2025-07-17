@@ -1,0 +1,38 @@
+[
+    {
+        "icon": "fa-home",
+        "color": "var(--accent-blue)",
+        "title_key": "service_home_title",
+        "desc_key": "service_home_desc"
+    },
+    {
+        "icon": "fa-building",
+        "color": "var(--accent-purple)",
+        "title_key": "service_corporate_title",
+        "desc_key": "service_corporate_desc"
+    },
+    {
+        "icon": "fa-project-diagram",
+        "color": "var(--accent-pink)",
+        "title_key": "service_data_title",
+        "desc_key": "service_data_desc"
+    },
+    {
+        "icon": "fa-shield-alt",
+        "color": "var(--accent-green)",
+        "title_key": "service_security_title",
+        "desc_key": "service_security_desc"
+    },
+    {
+        "icon": "fa-code",
+        "color": "var(--accent-orange)",
+        "title_key": "service_webdev_title",
+        "desc_key": "service_webdev_desc"
+    },
+    {
+        "icon": "fa-cubes",
+        "color": "var(--accent-red)",
+        "title_key": "service_software_title",
+        "desc_key": "service_software_desc"
+    }
+]
